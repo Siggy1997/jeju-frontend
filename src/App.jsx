@@ -5,14 +5,14 @@ import Home from "./pages/Home";
 import MainMap from "./pages/MainMap";
 import Main from "./pages/Main";
 import MusicPlayer from "./components/MusciPlayer";
-import { getFoodList } from "./apis/foodAPI";
 import { getPlaceList } from "./apis/placeAPI";
+import { getFoodList } from "./apis/foodAPI";
 
 function App() {
   const id = sessionStorage.getItem("id");
-  const [foodData, setFoodData] = useState({ food: {}, dessert: {} });
-  const [placeData, setPlaceData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [foodData, setFoodData] = useState({ food: [], dessert: [] });
+  const [placeData, setPlaceData] = useState([]);
 
   useEffect(() => {
     if (!id) return;
@@ -31,9 +31,9 @@ function App() {
       setPlaceData(placeResponse.placeList || []);
 
       // 이미지 preload
-      [foodResponse, dessertResponse].forEach(resp => {
-        resp.foodList.forEach(item => {
-          [1, 2, 3, 4, 5].forEach(num => {
+      [foodResponse, dessertResponse].forEach((resp) => {
+        resp.foodList.forEach((item) => {
+          [1, 2, 3, 4, 5].forEach((num) => {
             const img = new Image();
             img.src = `/images/food/${item.seq}/pic${num}.jpeg`;
           });
@@ -41,7 +41,7 @@ function App() {
       });
 
       // 비디오 preload (첫 화면용)
-      (placeResponse.placeList || []).forEach(item => {
+      (placeResponse.placeList || []).forEach((item) => {
         const video = document.createElement("video");
         video.src = `/videos/place/${item.seq}.mp4`;
         video.preload = "auto";
@@ -52,17 +52,13 @@ function App() {
   }, [id]);
 
   if (loading && id) return <div>로딩중...</div>;
-
   return (
     <>
       <MusicPlayer />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/main"
-          element={<Main foodData={foodData} placeData={placeData} />}
-        />
-        <Route path="/map" element={<MainMap />} />
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/main" element={<Main />}></Route>
+        <Route path="/map" element={<MainMap />}></Route>
       </Routes>
     </>
   );
