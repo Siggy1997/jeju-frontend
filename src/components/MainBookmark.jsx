@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { bookmarkList, toggleLike } from "../apis/userAPI";
-import "./MainBookmark.css"
-function MainBookmark({id}) {
+import "./MainBookMark.css"
+function MainBookMark({id}) {
       const [foodBookmark, setFoodBookmark] = useState([]);
       const [placeBookmark, setPlaceBookmark] = useState([]);
       const [favorite, setFavorite] = useState(true);
@@ -73,4 +73,4 @@ function MainBookmark({id}) {
   );
 }
 
-export default MainBookmark;
+export default MainBookMark;

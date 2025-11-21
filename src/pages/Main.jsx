@@ -1,10 +1,10 @@
-import { useContext,  useEffect,  useRef,  useState } from "react";
+import { useEffect,  useRef,  useState } from "react";
 import "swiper/css";
 import "./Main.css";
 import MainSchedule from "../components/MainSchedule";
 import MainFood from "../components/MainFood";
 import MainPlace from "../components/MainPlace";
-import MainBookmark from "../components/MainBookMark";
+import MainBookMark from "../components/MainBookMark";
 
 function Main() {
   const [activeTab, setActiveTab] = useState("sch");
@@ -101,7 +101,7 @@ function Main() {
               {activeTab === "food" && <MainFood id={id} category={"food"}/>}
               {activeTab === "dessert" && <MainFood id={id}  category={"dessert"}/>}
               {activeTab === "place" && <MainPlace id={id}/>}
-              {activeTab === "bookmark" && <MainBookmark id={id}/>}
+              {activeTab === "bookmark" && <MainBookMark id={id}/>}
             </div>
           
           </div>
