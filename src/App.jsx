@@ -15,6 +15,7 @@ function App() {
   const [placeData, setPlaceData] = useState([]);
 
   useEffect(() => {
+    console.log("preload 해볼까?")
     if (!id) return;
 
     (async () => {
