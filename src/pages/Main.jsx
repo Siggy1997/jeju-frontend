@@ -11,6 +11,7 @@ function Main() {
   const mainWrapperRef = useRef(null);
   const id = sessionStorage.getItem("id");
   const userName = sessionStorage.getItem("userName");
+  const userDescript = sessionStorage.getItem("userDescript");
   const img = sessionStorage.getItem("img");
 
   useEffect(() => {
@@ -51,7 +52,7 @@ function Main() {
 
             <div className="main-profile-next">
               <span className="do-hyeon-regular">{userName}</span>
-              <span className="do-hyeon-regular">안녕하세요!!</span>
+              <span className="do-hyeon-regular">{userDescript}</span>
             </div>
           </div>
 

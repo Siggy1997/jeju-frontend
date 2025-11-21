@@ -15,6 +15,7 @@ export default function Home() {
   const handleLogin = () => {
     sessionStorage.setItem("id", resData.result[activeIndex].id);
     sessionStorage.setItem("userName", resData.result[activeIndex].userName);
+    sessionStorage.setItem("userDescript", resData.result[activeIndex].descript);
     sessionStorage.setItem("img", resData.result[activeIndex].img);
 
     navigate("/main");
