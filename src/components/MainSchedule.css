@@ -1,0 +1,20 @@
+
+.main-wrapper .main-wrapper-bott .main-swiper-slide {
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    overflow: visible;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: white;
+    font-size: 1.7rem;
+    box-shadow: 1px -1px 5px rgb(163 163 163 / 40%)
+}
+
+/* Swiper 기본 shadow 안 짤리게 처리 */
+.main-wrapper .main-wrapper-bott .swiper,
+.main-wrapper .main-wrapper-bott .swiper-wrapper,
+.main-wrapper .main-wrapper-bott .swiper-slide {
+    /* overflow: visible !important; */
+}

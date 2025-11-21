@@ -1,0 +1,50 @@
+.home-wrapper {
+    background-size: cover;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.background-video { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 44rem;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.login-top {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.login-mid {
+    height: 55vh;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.login-bott {
+    height: 15vh;
+    flex-flow: row;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.login-mid .colon {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color: #ffffffb5;
+    margin: 0 1% 0 1%;
+}
+

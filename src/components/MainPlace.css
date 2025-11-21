@@ -1,0 +1,15 @@
+
+.place-wrapper .video-slide .drag{
+    width: auto;
+    height: 6vh;
+    background-color: #ffffffcc;
+    border-radius: 50%;
+    padding: 3px;
+} 
+
+.main-wrapper .main-wrapper-bott .place-wrapper .favorite {
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 35px;
+  height: 35px;
+}

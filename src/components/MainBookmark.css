@@ -1,0 +1,35 @@
+.bookmark-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bookmark-wrapper .bookmark-item {
+  display: flex;
+  flex-direction: column;
+  margin: 0 5% 4%;
+  width: 40%;
+}
+
+.bookmark-wrapper .bookmark-item .bookmark-item-img {
+  width: 100%;
+  aspect-ratio: 1 / 1.15;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bookmark-wrapper .bookmark-item span {
+  margin: 7px 0 10px 0;
+  width: 100%;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+ .bookmark-wrapper .bookmark-item .favorite {
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 35px;
+  height: 35px;
+}

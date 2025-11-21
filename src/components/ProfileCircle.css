@@ -1,0 +1,24 @@
+.profile-container {
+  margin-top: 15%;
+  margin-right: 2%;
+  position: absolute;
+  width: 13%;
+  height: 80%;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap:  2%;
+  z-index: 1;
+}
+
+.profile-circle{
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.profile-circle.active{
+  border: 3px solid black;
+}

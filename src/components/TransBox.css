@@ -1,0 +1,22 @@
+.login-mid .count-down-wrapper {
+    width: 100%;
+    flex-flow: row;
+    display: flex;
+    justify-content: center;
+}
+
+.countDown {
+    aspect-ratio: 1/1.1;
+    -webkit-backdrop-filter: blur(4px);
+    color: #ffffff;
+    backdrop-filter: blur(4px);
+    background: #0303032b;
+    border: 1px solid #d8d8d842;
+    border-radius: 12px;
+    align-items: center;
+    width: 17%;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

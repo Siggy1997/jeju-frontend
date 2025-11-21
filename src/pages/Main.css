@@ -1,0 +1,100 @@
+.main-wrapper {
+    background-color: rgb(245 245 245);
+    display: block;
+    flex-wrap: wrap;
+    width: 100%;
+    overflow: scroll;
+        scrollbar-width: none;
+}
+
+.main-wrapper .main-wrapper-top {
+    height: 30vh;
+    z-index: 0;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+}
+
+.main-wrapper .main-wrapper-mid {
+    width: 100%;
+    margin-top: 30vh;
+    min-height: 70vh;
+    position: relative;
+    background-color: rgb(245 245 245);
+}
+
+.main-profile {
+    background-color: rgb(245 245 245);
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 84px;
+    height: 83px;
+    border-radius: 50%;
+    transform: translate(0, -50%);
+    justify-content: center;
+    z-index: 10;
+}
+
+.main-profile .profile-img-circle {
+    width: 69px;
+    height: 69px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.main-profile-next {
+    margin-left: 10px;
+    display: flex;
+    position: absolute;
+    transform: translate(91px, -55%);
+    z-index: 10;
+    flex-direction: column;
+}
+
+.main-profile-next span:nth-child(1) {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 900;
+}
+
+.main-profile-next span:nth-child(2) {
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+
+.main-wrapper .main-wrapper-bott {
+    width: 100%;
+    height: 61vh;
+}
+
+.main-wrapper .main-wrapper-bott .category-navi {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8%;
+}
+
+.main-wrapper .main-wrapper-bott .category-navi div {
+    padding: 11px 0;
+    width: 20%;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.144);
+    display: flex;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.main-wrapper .main-wrapper-bott .category-navi .active {
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+.main-wrapper .main-wrapper-bott .main-content {
+    width: 100%;
+    height: 80%;
+}
+

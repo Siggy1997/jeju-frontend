@@ -1,0 +1,78 @@
+.main-wrapper .main-wrapper-bott .main-food-wrapper {
+  display: flex;
+  padding-bottom: 4%;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(245 245 245);
+}
+
+.main-wrapper .main-wrapper-bott .search-list {
+  height: 70px;
+  position: relative;
+  width: 96%;
+  border-radius: 8px;
+  display: flex;
+  background-color: rgba(219, 219, 219, 0.411);
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-bottom: 2%;
+  flex-direction: column;
+}
+
+.main-wrapper .main-wrapper-bott .search-list .basic-info {
+  display: flex;
+  height: 70px;
+}
+
+.main-wrapper .main-wrapper-bott .search-list .basic-info .basic-info-first {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+  box-sizing: border-box;
+  padding: 11px 14px;
+  justify-content: space-between;
+}
+
+.main-wrapper .main-wrapper-bott .search-list .basic-info .basic-info-second {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-wrapper .main-wrapper-bott .search-list .favorite {
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 35px;
+  height: 35px;
+}
+
+.main-wrapper .main-wrapper-bott .food-pic-wrapper {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.main-wrapper .main-wrapper-bott .food-pic-wrapper img {
+  height: 185px;
+  width: auto;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.food-pic-wrapper>div {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 185px;
+  border-radius: 10px;
+  width: 50px;
+}

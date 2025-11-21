@@ -1,0 +1,13 @@
+.ani-btn-one {
+    width: 75%;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #eaeaea;
+    background-color: #252525c9;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
