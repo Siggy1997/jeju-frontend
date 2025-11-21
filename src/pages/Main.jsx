@@ -102,7 +102,7 @@ function Main() {
               {activeTab === "food" && <MainFood id={id} category={"food"}/>}
               {activeTab === "dessert" && <MainFood id={id}  category={"dessert"}/>}
               {activeTab === "place" && <MainPlace id={id}/>}
-              {activeTab === "bookmark" && <MainLike />}
+              {activeTab === "bookmark" && <MainLike id={id}/>}
             </div>
           
           </div>

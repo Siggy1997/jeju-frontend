@@ -19,6 +19,7 @@ function App() {
 
     (async () => {
       setLoading(true);
+      console.log("preload 시작")
 
       // 음식 / 디저트 API 호출
       const foodResponse = await getFoodList(id, "food");
