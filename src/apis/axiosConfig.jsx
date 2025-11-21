@@ -4,7 +4,7 @@ import axios from "axios";
 const axiosConfig = axios.create({
   // baseURL: "http://192.168.45.223:8082", // 기본 API URL
   // baseURL: "http://192.168.219.168:8082", // 기본 API URL
-  baseURL: "http://192.168.0.31:8082", // 기본 API URL
+  baseURL: "https://backend.siggy.co.kr", // 기본 API URL
   // baseURL: "http://192.168.0.32:8082", // 기본 API URL
   timeout: 5000, // 5초 타임아웃 
   headers: {
