@@ -3,8 +3,8 @@ import "swiper/css";
 import "./Main.css";
 import MainSchedule from "../components/MainSchedule";
 import MainFood from "../components/MainFood";
-import MainPlace from "../components/MainPlace";
-import MainBookMark from "../components/MainBookMark";
+import MainPlace from "../components/MainPlace"; 
+import MainLike from "../components/MainLike";
 
 function Main() {
   const [activeTab, setActiveTab] = useState("sch");
@@ -101,7 +101,7 @@ function Main() {
               {activeTab === "food" && <MainFood id={id} category={"food"}/>}
               {activeTab === "dessert" && <MainFood id={id}  category={"dessert"}/>}
               {activeTab === "place" && <MainPlace id={id}/>}
-              {activeTab === "bookmark" && <MainBookMark id={id}/>}
+              {activeTab === "bookmark" && <MainLike />}
             </div>
           
           </div>
