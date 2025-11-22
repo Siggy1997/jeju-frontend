@@ -1,45 +1,49 @@
 import { useEffect, useState } from "react";
 import { bookmarkList, toggleLike } from "../apis/userAPI";
-import "./MainLike.css"
-function MainLike({id}) {
-      const [foodBookmark, setFoodBookmark] = useState([]);
-      const [placeBookmark, setPlaceBookmark] = useState([]);
-      const [favorite, setFavorite] = useState(true);
+import "./MainLike.css";
+function MainLike({ id }) {
+  const [foodBookmark, setFoodBookmark] = useState([]);
+  const [placeBookmark, setPlaceBookmark] = useState([]);
+  const [favorite, setFavorite] = useState(true);
 
-    useEffect(() => {
-        (async () => {
-          const responseData = await bookmarkList(id);
-          setFoodBookmark(responseData.foodBookmark || []);
-          setPlaceBookmark(responseData.placeBookmark || []);
-        })();
-      }, [id]);
+  useEffect(() => {
+    (async () => {
+      const responseData = await bookmarkList(id);
+      setFoodBookmark(responseData.foodBookmark || []);
+      setPlaceBookmark(responseData.placeBookmark || []);
+    })();
+  }, [id]);
 
-        const toggleFavorite = async (itemSeq, category) => {
-        await toggleLike(id, itemSeq, true, category); // 즐겨찾기 상태였으므로 true 전송
-        if (category === "food") {
-            setFoodBookmark(prev => prev.filter(item => item.seq !== itemSeq));
-        } else if (category === "place") {
-            setPlaceBookmark(prev => prev.filter(item => item.seq !== itemSeq));
-        }
-        };
+  const toggleFavorite = async (itemSeq, category) => {
+    await toggleLike(id, itemSeq, true, category);
+    if (category === "food" || category === "dessert" ) {
+      setFoodBookmark((prev) => prev.filter((item) => item.seq !== itemSeq));
+    } else if (category === "place") {
+      setPlaceBookmark((prev) => prev.filter((item) => item.seq !== itemSeq));
+    }
+  };
 
-    return ( 
-     <div className="bookmark-wrapper">
+  return (
+    <div className="bookmark-wrapper">
       {foodBookmark.map((item) => {
-        const isFav = {favorite}
+        const isFav = { favorite };
         return (
           <div className="bookmark-item" key={item.seq}>
             <div
               className="bookmark-item-img"
-              style={{ backgroundImage: `url(/images/food/${item.seq}/pic1.jpeg)` }}
+              style={{
+                backgroundImage: `url(/images/food/${item.seq}/pic1.jpeg)`,
+              }}
             >
               <div
                 className="favorite"
-                onClick={() => toggleFavorite(item.seq, "food")}
+                 onClick={() => toggleFavorite(item.seq, item.category)}
                 style={{
                   width: "35px",
                   height: "35px",
-                  backgroundImage: `url(/images/${isFav ? "like.png" : "unlike.png"})`,
+                  backgroundImage: `url(/images/${
+                    isFav ? "like.png" : "unlike.png"
+                  })`,
                   backgroundSize: "cover",
                 }}
               />
@@ -50,18 +54,23 @@ function MainLike({id}) {
       })}
 
       {placeBookmark.map((item) => {
-        const isFav ={favorite}
+        const isFav = { favorite };
         return (
-        <div className="bookmark-item" key={item.seq}>
+          <div className="bookmark-item" key={item.seq}>
             <div
               className="bookmark-item-img"
-              style={{ backgroundImage: `url(/images/place/pic${item.seq}.jpeg)`, backgroundPosition:"center" }}
+              style={{
+                backgroundImage: `url(/images/place/pic${item.seq}.jpeg)`,
+                backgroundPosition: "center",
+              }}
             >
               <div
                 className="favorite"
                 onClick={() => toggleFavorite(item.seq, "place")}
                 style={{
-                  backgroundImage: `url(/images/${isFav ? "like.png" : "unlike.png"})`,
+                  backgroundImage: `url(/images/${
+                    isFav ? "like.png" : "unlike.png"
+                  })`,
                 }}
               />
             </div>

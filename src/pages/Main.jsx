@@ -37,32 +37,30 @@ function Main() {
       setLoading(true);
       console.log("preLoad ㅇㅇ");
 
-      // 음식 / 디저트 API 호출
-      const foodResponse = await getFoodList(id, "food");
-      const dessertResponse = await getFoodList(id, "dessert");
-      setFoodData({
-        food: foodResponse.foodList,
-        foodLike: foodResponse.likeSeqList,
-        dessert: dessertResponse.foodList,
-        dessertLike: dessertResponse.likeSeqList,
-      });
+      // // 음식 / 디저트 API 호출
+      // const foodResponse = await getFoodList(id, "food");
+      // const dessertResponse = await getFoodList(id, "dessert");
+      // setFoodData({
+      //   food: foodResponse.foodList,
+      //   foodLike: foodResponse.likeSeqList,
+      //   dessert: dessertResponse.foodList,
+      //   dessertLike: dessertResponse.likeSeqList,
+      // });
 
-      // 장소 API 호출
-      const placeResponse = await getPlaceList(id);
-      setPlaceData(placeResponse.placeList || []);
+      // // 장소 API 호출
+      // const placeResponse = await getPlaceList(id);
+      // setPlaceData(placeResponse.placeList || []);
 
       // 이미지 preload
-      [foodResponse, dessertResponse].forEach((resp) => {
-        resp.foodList.forEach((item) => {
+      [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21].forEach((resp) => {
           [1, 2, 3, 4, 5].forEach((num) => {
             const img = new Image();
-            img.src = `/images/food/${item.seq}/pic${num}.jpeg`;
+            img.src = `/images/food/${resp}/pic${num}.jpeg`;
           });
-        });
       });
 
       // 비디오 preload
-      (placeResponse.placeList || []).forEach((item) => {
+      [1,2,3,4,5,6,7].forEach((item) => {
         const video = document.createElement("video");
         video.src = `/videos/place/${item.seq}.mp4`;
         video.preload = "auto";
@@ -157,17 +155,13 @@ function Main() {
               {activeTab === "food" && (
                 <MainFood
                   id={id}
-                  foodList={foodData.food}
                   category={"food"}
-                  likeSeqList={foodData.foodLike}
                 />
               )}
               {activeTab === "dessert" && (
                 <MainFood
                   id={id}
-                  foodList={foodData.dessert}
                   category={"dessert"}
-                  likeSeqList={foodData.dessertLike}
                 />
               )}
               {activeTab === "place" && (
