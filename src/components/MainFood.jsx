@@ -1,46 +1,42 @@
 import { useEffect, useState } from "react";
-import { getFoodList} from "../apis/foodAPI";
 import { toggleLike} from "../apis/userAPI";
 import { motion } from "framer-motion";
 import "./MainFood.css";
 
-function MainFood({id, category}) {
-
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [foodList, setFoodList] = useState([]);
-  const [likeSeqList, setLikeSeqList] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      const responseData = await getFoodList(id, category);
-      console.log("음식 리스트:", responseData.foodList);
-      setFoodList(responseData.foodList);
-      setLikeSeqList(responseData.likeSeqList);
-    })();
-  }, [id, category]);
+function MainFood({ id, foodList, category, likeSeqList }) {
+  console.log("foodlist :" + category + ":: " + foodList)
+  console.log("likeList :" + category + ":: " +likeSeqList)
   
-  const toggleFavorite = async (isFav, itemSeq) => {
-    (async () => {
-        await toggleLike(id, itemSeq, isFav, "food");
-    })();
+  const [activeIndex, setActiveIndex] = useState(0);
+  
+  // 내부 상태로 관리 (Main에서 받은 값 동기화)
+  const [localLikeSeq, setLocalLikeSeq] = useState(likeSeqList || []);
 
+  // 부모에서 likeSeqList가 바뀌면 내부 state도 업데이트
+  useEffect(() => {
+    setLocalLikeSeq(likeSeqList);
+  }, [likeSeqList]);
+
+  // 좋아요 토글
+  const toggleFavorite = async (isFav, itemSeq) => {
     if (isFav) {
-      // 상태 업데이트
-      setLikeSeqList((prev) => prev.filter((id) => id !== itemSeq));
+      setLocalLikeSeq(prev => prev.filter(seq => seq !== itemSeq));
     } else {
-      // 상태 업데이트
-      setLikeSeqList((prev) => [...prev, itemSeq]);
+      setLocalLikeSeq(prev => [...prev, itemSeq]);
     }
+    await toggleLike(id, itemSeq, isFav, category);
   };
   return (
     <div className="main-food-wrapper">
       {foodList &&
         foodList.map((item, index) => {
-          const isFav = likeSeqList.includes(item.seq);
+          const isFav = localLikeSeq.includes(item.seq);
+          console.log(isFav)
 
           return (
             <motion.div
               key={item.seq}
+              onClick={() => setActiveIndex(index)}
               className={`search-list ${activeIndex === index ? "active" : ""}`}
               animate={{ height: activeIndex === index ? 300 : 70 }}
               transition={{ duration: 0.3 }}
