@@ -78,7 +78,7 @@ body {
     max-width: 30rem;
     overflow: hidden;
     background-color: rgb(245 245 245);
-
+    z-index: -1;
 }
 
 .max-30 {
