@@ -1,0 +1,99 @@
+
+@keyframes dyinglight {
+  15% {
+    transform: scale(1.6);
+  }
+
+  50% {
+    transform: rotate(-89deg);
+  }
+
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+/* .dl */
+.dl {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  background-color: white;
+}
+
+/* .dl__square */
+.dl__square {
+  display: block;
+  width: 50px;
+  /* $squareSize */
+  height: 50px;
+  background: #4285F4;
+  /* $primary-color */
+}
+
+/* .dl__container */
+.dl__container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  transform-origin: 50% 50% 0;
+  animation: dyinglight 1s ease infinite;
+  backface-visibility: hidden;
+}
+
+/* .dl__corner--top:before */
+.dl__corner--top:before {
+  position: absolute;
+  width: 17px;
+  /* $cornerSize = ceil($squareSize / $scale) = ceil(50 / 3) ≈ 17 */
+  height: 17px;
+  color: #4285F4;
+  content: '';
+  border-left: 1px solid;
+  border-top: 1px solid;
+  top: -6px;
+  /* $cornerPosition = ceil($cornerSize / $scale) = ceil(17 / 3) ≈ 6 */
+  left: -6px;
+}
+
+/* .dl__corner--top:after */
+.dl__corner--top:after {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  color: #4285F4;
+  content: '';
+  border-right: 1px solid;
+  border-top: 1px solid;
+  top: -6px;
+  right: -6px;
+}
+
+/* .dl__corner--bottom:before */
+.dl__corner--bottom:before {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  color: #4285F4;
+  content: '';
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  bottom: -6px;
+  left: -6px;
+}
+
+/* .dl__corner--bottom:after */
+.dl__corner--bottom:after {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  color: #4285F4;
+  content: '';
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  bottom: -6px;
+  right: -6px;
+}
